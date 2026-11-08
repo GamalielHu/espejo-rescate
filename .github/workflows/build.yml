@@ -30,6 +30,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python descargar_binarios.py --plataforma windows
 
+      - name: Verificar opciones de scrcpy usadas por la app
+        shell: bash
+        run: |
+          bin/scrcpy.exe --version
+          ayuda="$(bin/scrcpy.exe --help)"
+          for op in --serial --window-title --max-size --video-bit-rate --video-codec \
+                    --no-audio --max-fps --turn-screen-off --stay-awake --show-touches \
+                    --always-on-top --record --window-borderless --window-x --window-y; do
+            echo "$ayuda" | grep -q -- "$op" || { echo "Falta $op en esta versión de scrcpy"; exit 1; }
+          done
+          echo "Todas las opciones existen."
+
       - name: Compilar ejecutable
         run: >
           pyinstaller --noconfirm --onefile --windowed --name EspejoRescate
