@@ -87,6 +87,12 @@ def cmd_pin(adb: AdbManager, a) -> None:
 
 
 def main() -> None:
+    # Consola de Windows: permitir ✔/✖ y acentos.
+    for flujo in (sys.stdout, sys.stderr):
+        try:
+            flujo.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
     if len(sys.argv) == 1:
         from gui import run
         run()

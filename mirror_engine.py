@@ -89,7 +89,8 @@ def scrcpy_version(path: str) -> tuple[int, int]:
     """Devuelve (mayor, menor) de scrcpy; (0, 0) si no se puede leer."""
     try:
         out = subprocess.run([path, "--version"], capture_output=True,
-                             timeout=10, creationflags=_NO_WINDOW)
+                             timeout=10, stdin=subprocess.DEVNULL,
+                             creationflags=_NO_WINDOW)
         text = (out.stdout or out.stderr).decode("utf-8", "replace")
         m = re.search(r"scrcpy\s+v?(\d+)\.(\d+)", text)
         if m:

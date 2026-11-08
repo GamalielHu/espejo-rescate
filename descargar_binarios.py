@@ -24,6 +24,13 @@ import zipfile
 
 REPO = "Genymobile/scrcpy"
 VERSION_RESPALDO = "v3.3.1"      # se usa si la API de GitHub no responde
+# La consola de Windows (cp1252) no imprime ✔/✖: forzar UTF-8.
+for _flujo in (sys.stdout, sys.stderr):
+    try:
+        _flujo.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 BIN = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bin")
 
 

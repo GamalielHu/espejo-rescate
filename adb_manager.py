@@ -153,6 +153,7 @@ class AdbManager:
             self._log("$ adb " + " ".join(cmd[1:]))
         try:
             proc = subprocess.run(cmd, capture_output=True, timeout=timeout,
+                                  stdin=subprocess.DEVNULL,
                                   creationflags=_NO_WINDOW)
         except FileNotFoundError as exc:
             raise AdbNotFound(str(exc)) from exc
