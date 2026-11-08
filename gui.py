@@ -45,10 +45,10 @@ AYUDA_SIN_AUTORIZAR = (
     "Android exige aceptar el aviso «¿Permitir depuración USB?» en el propio "
     "teléfono; esta app no puede (ni intenta) saltarse ese permiso.\n\n"
     "Formas legítimas de aceptarlo con la pantalla rota:\n"
-    "  • Adaptador USB-C a HDMI: muchos equipos (Samsung S/Note/A5x, varios "
-    "gama alta) envían imagen a un monitor o TV.\n"
     "  • Ratón USB por OTG: aparece un cursor; toca «Permitir» (marca "
-    "«Permitir siempre»).\n"
+    "«Permitir siempre»). Funciona en casi todos los equipos.\n"
+    "  • Adaptador USB-C a HDMI: solo en equipos con salida de video "
+    "(Samsung serie S/Note/Tab; la serie A normalmente NO).\n"
     "  • Si el táctil todavía responde, el aviso suele estar centrado y el "
     "botón «Permitir» abajo a la derecha.\n\n"
     "Después vuelve a conectar el cable a esta PC."
@@ -59,7 +59,8 @@ AYUDA_SIN_EQUIPO = (
     "Requisitos: depuración USB activada y esta PC autorizada antes de que "
     "se rompiera la pantalla.\n"
     "Usa un cable de datos (no solo de carga).\n"
-    "En Windows, si no aparece, instala el driver USB del fabricante."
+    "En Windows, si no aparece, instala el driver USB del fabricante\n"
+    "(Samsung: developer.samsung.com/android-usb-driver)."
 )
 
 ATAJOS_SCRCPY = (
