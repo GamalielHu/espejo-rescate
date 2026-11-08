@@ -1,0 +1,3 @@
+Aquí van scrcpy.exe, adb.exe, scrcpy-server y sus DLL.
+Se descargan con:  python descargar_binarios.py
+(El .exe de GitHub Actions ya los trae dentro.)

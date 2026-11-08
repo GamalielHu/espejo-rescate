@@ -1,0 +1,8 @@
+# Espejo Rescate - dependencias de Python
+customtkinter>=5.2
+pillow>=10.0          # modo captura (respaldo sin scrcpy)
+# Para compilar el .exe:
+# pyinstaller>=6.6
+#
+# Binarios externos (no son paquetes de Python): adb y scrcpy.
+# En Windows: python descargar_binarios.py  -> los deja en bin/
